@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-7">
+                <div *ngFor="let pokemon of pokemons" class="panel panel-info">
+                    <a [routerLink]="['/pokemon', pokemon.id]">
+                        <h1>{{pokemon.name}}</h1>
+                    </a>    
+                </div>
+            </div>
+      </div>
+</div>
+
+<!--
+    <div class="panel-body">
+                    <ul>
+                    <li>Type: {{ pokemon.type }}</li>
+                    <li>Height: {{ pokemon.height }} m</li>
+                    <li>Weight: {{ pokemon.weight }} kg</li>
+                    <li>Ability:  {{ pokemon.ability}}</li>
+                    <li>Statistics: 
+                        <ul>
+                            <li>HP: {{ pokemon.statistic.hp}} out of 10 </li>
+                            <li>ATT: {{ pokemon.statistic.attack}} out of 10</li>
+                            <li>DEF: {{ pokemon.statistic.defense}} out of 10</li>
+                            <li>SPEED: {{ pokemon.statistic.speed}} out of 10</li>
+                        </ul>
+                    </ul>
+                </div>
+-->

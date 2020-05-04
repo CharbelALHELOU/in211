@@ -1,0 +1,11 @@
+a{
+    border: 2px solid crimson !important;
+    padding: 5px;
+    color: crimson;
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+    color: gold;
+}

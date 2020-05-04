@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row cool">
+      <div class="col-12 ">
+                <div  class="panel panel-info">
+                    <h1>
+                        A wild  <h2 class="display-3">{{pokemon.name}} </h2>appeard!
+                    </h1>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Type: {{ pokemon.type }}</li>
+                            <li>Height: {{ pokemon.height }} m</li>
+                            <li>Weight: {{ pokemon.weight }} kg</li>
+                            <li>Ability:  {{ pokemon.ability}}</li>
+                            <li>Statistics: 
+                                <app-stat name="HP:" value={{pokemon.statistic.hp}}></app-stat> 
+                                <app-stat name="Attack:" value={{pokemon.statistic.attack}}></app-stat>
+                                <app-stat name="Defense:" value={{pokemon.statistic.defense}}></app-stat>
+                                <app-stat name="Speed:" value={{pokemon.statistic.speed}}></app-stat>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+      </div>
+</div>
+
+<!--
+    <div class="panel-body">
+        <ul>
+            <li>Type: {{ pokemon.type }}</li>
+            <li>Height: {{ pokemon.height }} m</li>
+            <li>Weight: {{ pokemon.weight }} kg</li>
+            <li>Ability:  {{ pokemon.ability}}</li>
+            <li>Statistics: 
+                <ul>
+                    <li>HP: {{ pokemon.statistic.hp}} out of 10 </li>
+                    <li>ATT: {{ pokemon.statistic.attack}} out of 10</li>
+                    <li>DEF: {{ pokemon.statistic.defense}} out of 10</li>
+                    <li>SPEED: {{ pokemon.statistic.speed}} out of 10</li>
+                </ul>
+        </ul>
+    </div>
+-->

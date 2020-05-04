@@ -1,0 +1,106 @@
+
+<div class="container p-2">
+    <form autocomplete="off" #form="ngForm" (change)="debug(form)" (ngSubmit)="processForm(form.value); form.reset()">
+        <fieldset>
+          <legend>Pokemon Info</legend>
+          <div class="row">
+          <div class="form-group col-md-6">
+              <input type="hidden" [(ngModel)]="pokemon.id" name="id" >
+              <label for="name">Name:</label>
+              <input class="form-control" maxlength="50" required type="text" [(ngModel)] = "pokemon.name" #name="ngModel" id="name" name="name">
+              <div *ngIf="name.invalid && (name.touched || name.dirty)">
+                <p *ngIf="name.errors.required" class="text-danger">Name is required</p>
+                <p *ngIf="name.errors.maxlength" class="text-danger">Max length is {{name.errors.maxlength.requiredLength}} characters</p>
+              </div>
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="ability">Ability:</label>
+                <input class="form-control" maxlength="50" required type="text" [(ngModel)] = "pokemon.ability" #ability="ngModel" id="ability" name="ability">
+                <div *ngIf="ability.invalid && (ability.touched || ability.dirty)">
+                  <p *ngIf="ability.errors.required" class="text-danger">Ability is required</p>
+                  <p *ngIf="ability.errors.maxlength" class="text-danger">Max length is {{ability.errors.maxlength.requiredLength}} characters</p>
+                </div>
+              </div>
+              
+            <div class="form-group col-md-4">
+                <label for="type">Type</label>
+                <select class="form-control" required [(ngModel)] = "pokemon.type" name="type" id="type" #type="ngModel">
+                  <option value="">-- Empty --</option>
+                  <option value="petrol">Fire</option>
+                  <option value="diesel">Water</option>
+                  <option value="electric">Grass</option>
+                </select>
+                <div *ngIf="type.invalid && (type.touched || type.dirty)">
+                    <p *ngIf="type.errors.required" class="text-danger">Type is required</p>
+                </div>
+              </div>
+    
+            <div class="form-group col-md-4">
+            <label for="height">Height:</label>
+            <input class="form-control" max="100" min="0" required type="number" [(ngModel)] = "pokemon.height" id="height" name="height" #height="ngModel">
+            <div *ngIf="height.invalid && (height.touched || height.dirty)">
+                <p *ngIf="height.errors.required" class="text-danger">Height is required</p>
+                <p *ngIf="height.errors.max" class="text-danger">Max height should be 100hp</p>
+            </div>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <label for="weight">Weight:</label>
+                <input class="form-control" max="100" min="0" required type="number" [(ngModel)] = "pokemon.weight" id="weight" name="weight" #weight="ngModel">
+                <div *ngIf="weight.invalid && (weight.touched || weight.dirty)">
+                    <p *ngIf="weight.errors.required" class="text-danger">Weight is required</p>
+                    <p *ngIf="weight.errors.max" class="text-danger">Max weight should be 100hp</p>
+                </div>
+              </div>
+            </div>
+        </fieldset>
+        <fieldset ngModelGroup="statistic">
+            <legend>Statistic Info</legend>
+            <div class="row">
+            <div class="form-group col-md-3">
+                <label for="attack">Attack:</label>
+                <input class="form-control" max="10" min="0" pattern="10 | [1-9]" required type="number" [(ngModel)] = "pokemon.statistic.attack" id="attack" name="attack" #attack="ngModel">
+                <div *ngIf="attack.invalid && (attack.touched || attack.dirty)">
+                    <p *ngIf="attack.errors.required" class="text-danger">Attack is required</p>
+                    <p *ngIf="attack.errors.max" class="text-danger">Max attack should be 100hp</p>
+                </div>
+              </div>
+    
+            <div class="form-group col-md-3">
+            <label for="defense">Defense:</label>
+            <input class="form-control" max="10" min="0" pattern="10 | [1-9]" required type="number" [(ngModel)] = "pokemon.statistic.defense" id="defense" name="defense" #defense="ngModel">
+            <div *ngIf="defense.invalid && (defense.touched || defense.dirty)">
+                <p *ngIf="defense.errors.required" class="text-danger">Defense is required</p>
+                <p *ngIf="defense.errors.max" class="text-danger">Max defense should be 100hp</p>
+            </div>
+            </div>
+    
+            <div class="form-group col-md-3">
+                <label for="hp">HP:</label>
+                <input class="form-control" max="10" min="0" pattern="10 | [1-9]" required type="number" [(ngModel)] = "pokemon.statistic.hp" id="hp" name="hp" #hp="ngModel">
+                <div *ngIf="hp.invalid && (hp.touched || hp.dirty)">
+                    <p *ngIf="hp.errors.required" class="text-danger">HP is required</p>
+                    <p *ngIf="hp.errors.max" class="text-danger">Max hp should be 100hp</p>
+                </div>
+                </div>
+            
+            <div class="form-group col-md-3">
+                <label for="speed">Speed:</label>
+                <input class="form-control" max="10" min="0" pattern="10 | [1-9]" required type="number" [(ngModel)] = "pokemon.statistic.speed" id="speed" name="speed" #speed="ngModel">
+                <div *ngIf="speed.invalid && (speed.touched || speed.dirty)">
+                    <p *ngIf="speed.errors.required" class="text-danger">Speed is required</p>
+                    <p *ngIf="speed.errors.max" class="text-danger">Max speed should be 100hp</p>
+                </div>
+                </div>
+            </div>
+          </fieldset>
+      
+        <div class="btn-group">
+          <button class="btn btn-primary" type="submit" [disabled]="form.invalid">{{'Add Pokemon'}}</button>
+          <button class="btn btn-danger" type="reset">Reset</button>
+        </div>
+      </form>
+    
+
+</div>
