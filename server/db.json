@@ -1,0 +1,57 @@
+{
+  "pokemons": [
+    {
+      "id": 0,
+      "name": "Squirtle",
+      "type": "water",
+      "height": 15,
+      "weight": 80,
+      "ability": "funny",
+      "statistic": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "speed": 5
+      }
+    },
+    {
+      "id": 1,
+      "name": "Charmander",
+      "type": "fire",
+      "height": 16,
+      "weight": 88,
+      "ability": "happy",
+      "statistic": {
+        "hp": 8,
+        "attack": 4,
+        "defense": 7,
+        "speed": 2
+      }
+    },
+    {
+      "id": 2,
+      "name": "Turtwig",
+      "type": "grass",
+      "height": 10,
+      "weight": 60,
+      "ability": "can build an angular app",
+      "statistic": {
+        "hp": 5,
+        "attack": 7,
+        "defense": 8,
+        "speed": 9
+      }
+    },
+    {
+      "name": "dfghj",
+      "ability": "sdfghj",
+      "type": "diesel",
+      "height": 55555,
+      "weight": 14,
+      "statistic": {
+        "attack": 14
+      },
+      "id": 3
+    }
+  ]
+}
